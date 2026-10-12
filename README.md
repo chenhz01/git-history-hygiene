@@ -2,6 +2,8 @@
 
 git-history-hygiene audits a git history for hygiene problems — large-file churn hotspots, merge density, commit granularity, generic commit subjects — and prints a 0–100 hygiene score with findings. Run it before open-sourcing or during a repo handover: it answers "how messy is this history?" in one command. Confidence: High (≥80%) that it surfaces the listed finding classes; the score is heuristic by design.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Histories decay quietly: 200 MB build artifacts committed and deleted months ago, merge-commit soups from bad branching, "update"/"wip" subjects that make `git log` useless, mega-commits bundling unrelated changes. Reviewers and auditors cannot see any of this from the current tree — it only lives in history. Existing tools either need full checkout-time hooks or target one narrow question. A portable, parseable history health report was missing.
